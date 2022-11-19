@@ -1,0 +1,262 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body, #app {
+  width: 100%;
+  height: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.back-black {
+  background-color: black;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  #login {
+    position: absolute;
+  }
+  .login-form {
+    width: 640px;
+    height: 360px;
+    background-color: rgb(253, 244, 231, 0.6);
+    padding: 24px 48px;
+    user-select: none;
+    #tiger {
+      width: 200px;
+      height: 50px;
+      position: relative;
+      margin: 0 auto 30px;
+      background-color: rgb(0, 148, 148);
+      .e75, canvas {
+        position: absolute;
+        width: 200px;
+        height: 50px;
+        left: 0;
+        top: 0;
+        text-align: center;
+        line-height: 50px;
+        font-size: 24px;
+        color: #000;
+      }
+    }
+    .ant-form {
+      flex: 1;
+      .text-right {
+        .ant-form-item-control-input-content {
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+.home {
+  .home-top {
+    height: 60px;
+    border-bottom: 1px solid lightgray;
+    .top-nav {
+      .item {
+        width: 160px;
+        height: 48px;
+        line-height: 48px;
+        font-size: 20px;
+        border-radius: 10px;
+        font-weight: bold;
+        text-align: center;
+        transform: translateY(6px);
+        margin: 0 16px;
+        cursor: pointer;
+      }
+    }
+    .logout {
+      width: 100px;
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+      transform: translateY(12px);
+      font-size: 18px;
+      background-color: rgb(197, 127, 255);
+      border-radius: 4px;
+      margin-right: 10px;
+      cursor: pointer;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+  .home-main {
+    flex: 1;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex {
+  display: flex;
+}
+
+.high-item:hover, .high-item.active {
+  background-color: rgb(127, 204, 255);
+}
+
+.map-home {
+  position: relative;
+  .ol-full-screen {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    .ol-full-screen-false, .ol-full-screen-true {
+      width: 24px;
+      height: 24px;
+      font-size: 18px;
+      line-height: 0;
+      border: none;
+      background-color: rgba(171, 248, 223, 0.6);
+    }
+  }
+  .ol-mouse-position {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+  .ol-zoom {
+    position: absolute;
+    top: 48px;
+    left: 10px;
+    button {
+      display: block;
+      width: 24px;
+      height: 24px;
+      font-size: 18px;
+      line-height: 0;
+      border: none;
+      background-color: rgba(171, 248, 223, 0.6);
+      margin: 6px 0;
+    }
+  }
+}
+
+.map-home {
+  position: relative;
+  .clear-paint {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    .clear-item {
+      width: 28px;
+      line-height: 28px;
+      font-size: 16px;
+      margin-bottom: 12px;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+  .paint-list {
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    .paint-item {
+      width: 80px;
+      line-height: 28px;
+      font-size: 16px;
+      margin-bottom: 12px;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.canvas-home {
+  font-size: 0;
+}
+
+.svg-home {
+  .title {
+    svg text {
+      animation: stroke 5s infinite alternate;
+      letter-spacing: 10px;
+      font-size: 60px;
+    }
+  }
+  .main {
+    .svg-icon {
+      font-size: 64px;
+      animation: kyrie 3s infinite linear;
+    }
+  }
+}
+
+@keyframes kyrie {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes stroke {
+	0% {
+		fill: rgba(72, 138, 20, 0);
+		stroke: rgba(54, 95, 160, 1);
+		stroke-dashoffset: 25%;
+		stroke-dasharray: 0 50%;
+		stroke-width: 1;
+	}
+	70% {
+		fill: rgba(72, 138, 20, 0);
+		stroke: rgba(54, 95, 160, 1);
+		stroke-width: 3;
+	}
+	90%,
+	100% {
+		fill: rgba(72, 138, 204, 1);
+		stroke: rgba(54, 95, 160, 0);
+		stroke-dashoffset: -25%;
+		stroke-dasharray: 50% 0;
+		stroke-width: 0;
+	}
+}
