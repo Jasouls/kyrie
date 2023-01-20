@@ -22,41 +22,49 @@ const user = {
     UserLogin({ commit }, param) {
       console.log(param);
       return new Promise((resolve, reject) => {
-        loginApi(param).then((res) => {
-          const data = res.data;
-          if (data.status === 200) {
-            commit('SET_LOGINSTATUS', true);
-            setLoginStatus(true);
-          }
-          resolve(res);
-        }).catch((err) => {
-          reject(err);
-        });
+        setLoginStatus(true);
+        resolve();
+        // loginApi(param).then((res) => {
+        //   const data = res.data;
+        //   if (data.status === 200) {
+        //     commit('SET_LOGINSTATUS', true);
+        //     setLoginStatus(true);
+        //   }
+        //   resolve(res);
+        // }).catch((err) => {
+        //   reject(err);
+        // });
       });
     },
     // 获取用户信息
     GetUserInfo({ commit }) {
       return new Promise((resolve, reject) => {
-        getUserInfo().then((res) => {
-          const data = res.data;
-          if (data.status === 200) {
-            commit('SET_USERINFO', data.result);
-            resolve(res);
-          } else {
-            reject(data.message);
-          }
-        });
+        commit('SET_USERINFO', {});
+        resolve();
+        // getUserInfo().then((res) => {
+        //   const data = res.data;
+        //   if (data.status === 200) {
+        //     commit('SET_USERINFO', data.result);
+        //     resolve(res);
+        //   } else {
+        //     reject(data.message);
+        //   }
+        // });
       });
     },
     // 用户手动登出
     UserLogout({ commit }) {
       return new Promise((resolve) => {
-        // disconnect();
         commit('SET_LOGINSTATUS', false);
         commit('SET_USERINFO', {});
-        // TODO 清除路由信息
         removeLoginStatus();
         resolve();
+        // disconnect();
+        // commit('SET_LOGINSTATUS', false);
+        // commit('SET_USERINFO', {});
+        // TODO 清除路由信息
+        // removeLoginStatus();
+        // resolve();
       });
     },
   }

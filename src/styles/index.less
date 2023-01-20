@@ -138,7 +138,7 @@ html, body, #app {
       background-color: rgba(171, 248, 223, 0.6);
     }
   }
-  .ol-mouse-position {
+  .custom-mouse-position {
     position: absolute;
     bottom: 10px;
     left: 10px;
@@ -202,6 +202,7 @@ html, body, #app {
 
 .canvas-home {
   font-size: 0;
+  background-color: #000;
 }
 
 .svg-home {
@@ -259,4 +260,205 @@ html, body, #app {
 		stroke-dasharray: 50% 0;
 		stroke-width: 0;
 	}
+}
+
+.css-home {
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  .box {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .box1 {
+      width: 30px;
+      height: 30px;
+      border: 2px solid #000;
+      border-top-color: transparent;
+      border-radius: 100%;
+      animation: circle 1s infinite linear;
+    }
+    .box2 {
+      width: 30px;
+      height: 30px;
+      border: 2px solid transparent;
+      border-top-color: #000;
+      border-radius: 100%;
+      animation: circle 1s infinite linear;
+    }
+    .box3 {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      border: 2px solid #000;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      border-radius: 100%;
+      animation: circle2 1s infinite linear;
+      &::before, &::after {
+        position: absolute;
+        top: 22px;
+        left: 0;
+        border-top: 5px solid #000;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        content: "";
+        transform: rotate(-30deg);
+      }
+      &::after {
+        top: 0;
+        left: 18px;
+        transform: rotate(150deg);
+      }
+    }
+    .box4 {
+      width: 50px;
+      height: 50px;
+      background-color: #000;
+      border-radius: 100%;
+      animation: seig 1s infinite linear;
+    }
+    .box5 {
+      width: 50px;
+      height: 50px;
+      position: relative;
+      &::before, &::after {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 10px;
+        background-color: #000;
+        border-radius: 50%;
+        position: absolute;
+      }
+      &::before {
+        transform: translate(0, 0);
+        animation: rect1 4s infinite linear;
+      }
+      &::after {
+        transform: translate(40px, 40px);
+        animation: rect2 4s infinite linear;
+      }
+    }
+
+    @keyframes rect1 {
+      0% {
+        transform: translate(40px, 40px);
+      }
+      25% {
+        transform: translate(0, 40px);
+      }
+      50% {
+        transform: translate(0, 0);
+      }
+      75% {
+        transform: translate(40px, 0);
+      }
+      100% {
+        transform: translate(40px, 40px);
+      }
+    }
+
+    @keyframes rect2 {
+      0% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(40px, 0);
+      }
+      50% {
+        transform: translate(40px, 40px);
+      }
+      75% {
+        transform: translate(0, 40px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    @keyframes circle {
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes circle2 {
+      0% {
+        transform: rotate(360deg);
+      }
+      100% {
+        transform: rotate(0);
+      }
+    }
+    @keyframes seig {
+      0% {
+        transform: scale(0.1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.g6-home {
+  & > div {
+    border: 1px solid black;
+    display: inline-block;
+  }
+}
+
+.graph-home {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  .graph {
+    height: 800px;
+  }
+}
+
+.test-home {
+  box-sizing: border-box;
+  background-color: rgb(63, 0, 122);
+  padding: 40px;
+}
+
+.kyrie-home {
+  background-color: #000;
+  font-size: 0;
+  display: flex;
+  .info {
+    width: 400px;
+    box-sizing: border-box;
+    padding: 40px;
+    .info-card {
+      border: 1px solid #fff;
+      color: #fff;
+      box-sizing: border-box;
+      padding: 20px;
+      .name {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        transition: 1s;
+      }
+      .msg, .time, .address {
+        font-size: 16px;
+        line-height: 28px;
+        margin-bottom: 20px;
+        transition: 1s;
+      }
+    }
+  }
+  .graph {
+    flex: 1;
+  }
 }

@@ -12,6 +12,14 @@ const routes = [
     redirect: { name: 'SVG' },
     children: [
       {
+        path: 'css3',
+        name: 'CSS3',
+        component: () => import('@/components/common/Css3.vue'),
+        meta: {
+          title: 'CSS3',
+        },
+      },
+      {
         path: 'svg',
         name: 'SVG',
         component: () => import('@/components/common/Svg.vue'),

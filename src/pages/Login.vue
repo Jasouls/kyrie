@@ -3,7 +3,7 @@
     <canvas id="login" width="1920" height="936"></canvas>
     <div class="login-form flex-col">
       <div id="tiger">
-        <div class="e75" id="e75">鸡屁股</div>
+        <div class="e75" id="e75">谢谢参与</div>
         <canvas id="maus" width="200" height="50"></canvas>
       </div>
       <a-form
@@ -58,8 +58,7 @@ export default defineComponent({
         username: values.username,
         password: md5(md5(values.password)),
       }).then((res) => {
-        console.log(res.data);
-        router.push({ name: 'SVG' });
+        router.push({ name: 'CSS3' });
       })
     };
 
